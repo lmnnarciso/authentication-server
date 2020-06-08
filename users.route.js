@@ -18,8 +18,8 @@ router.post("/users", async (req, res) => {
 router.post("/users/login", async (req, res) => {
   //Login a registered user
   try {
-    const { email, password } = req.body;
-    const user = await User.findByCredentials(email, password);
+    const { name, password } = req.body;
+    const user = await User.findByCredentials(name, password);
     if (!user) {
       return res
         .status(401)
